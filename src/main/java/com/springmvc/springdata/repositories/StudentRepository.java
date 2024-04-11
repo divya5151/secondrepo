@@ -19,6 +19,13 @@ public interface StudentRepository extends JpaRepository<Student,Integer> {
     public Integer deleteStudentById(Integer Id);
 
     public  Student getStudentByName(String Name);
+    public  Student getStudentByEmail(String Email);
+    @Query(nativeQuery = true,value =" select * from student where enable=true")
+    public  List<Student> getAllStudnetsByEnable();
+
+    public List<Student> getAllStudentsByEnable(Boolean b);
     public  Student getStudentByEmailAndPassword(String Email,String Password);
+    public  List<Student> findByNameLike(String Name);
+
 
 }

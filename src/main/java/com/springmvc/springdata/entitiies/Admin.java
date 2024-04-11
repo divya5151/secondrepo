@@ -5,17 +5,24 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Student {
+public class Admin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    private int id;
+    private  int id;
     private String name;
-    private  String contact;
     @Column(unique = true)
     private String email;
     private String password;
-    private boolean enable;
+
+    private  boolean enable;
+
+    public boolean isEnable() {
+        return enable;
+    }
+
+    public void setEnable(boolean enable) {
+        this.enable = enable;
+    }
 
     public int getId() {
         return id;
@@ -33,14 +40,6 @@ public class Student {
         this.name = name;
     }
 
-    public String getContact() {
-        return contact;
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -55,13 +54,5 @@ public class Student {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public boolean isEnable() {
-        return enable;
-    }
-
-    public void setEnable(boolean enable) {
-        this.enable = enable;
     }
 }
