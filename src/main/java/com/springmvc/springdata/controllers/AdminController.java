@@ -92,7 +92,7 @@ public class AdminController {
     @GetMapping("/getbyname/{Name}")
     public List<Student> Findbyname(@PathVariable String Name){
 
-        return stimpl.findByNameLike(Name+"%");
+        return stimpl.findByNameLike("%"+Name);
     }
 }
 
